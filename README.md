@@ -1,6 +1,12 @@
 
-## CloudFront URL: d1efz1dv55fvd9.cloudfront.net
-## S3-website: http://my-second-best-app.s3-website-us-east-1.amazonaws.com/
+# CloudFront URL:   
+https://d1efz1dv55fvd9.cloudfront.net
+  
+# S3-website:   
+http://my-second-best-app.s3-website-us-east-1.amazonaws.com/
+
+
+
 
 
 # React-shop-cloudfront
