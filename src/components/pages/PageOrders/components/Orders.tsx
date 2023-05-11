@@ -14,7 +14,7 @@ import {
 } from "~/queries/orders";
 
 export default function Orders() {
-  const { data } = useOrders();
+  const { data }: { data: any } = useOrders();
   const invalidateOrders = useInvalidateOrders();
   const { mutate: deleteOrder } = useDeleteOrder();
 
@@ -31,16 +31,17 @@ export default function Orders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data?.map((order) => (
+          {data?.map((order: any) => (
             <TableRow key={order.id}>
               <TableCell component="th" scope="row">
-                {order.address?.firstName} {order.address?.lastName}
+                {JSON.parse(order?.delivery)?.firstName}{" "}
+                {JSON.parse(order?.delivery)?.lastName}
               </TableCell>
-              <TableCell align="right">{order.items.length}</TableCell>
-              <TableCell align="right">{order.address?.address}</TableCell>
+              <TableCell align="right">{order.cart.items.length}</TableCell>
               <TableCell align="right">
-                {order.statusHistory[order.statusHistory.length - 1].status}
+                {JSON.parse(order?.delivery)?.address}
               </TableCell>
+              <TableCell align="right">{order.status}</TableCell>
               <TableCell align="right">
                 <Button
                   size="small"
